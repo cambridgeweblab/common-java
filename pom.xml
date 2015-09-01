@@ -18,6 +18,33 @@
         <module>weblab-multipart-jersey</module>
     </modules>
 
+    <distributionManagement>
+        <repository>
+            <id>maven-s3-release-repo</id>
+            <name>AWS Release Repository</name>
+            <url>s3://mvnrepository.cambridgeassessment.org.uk/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-s3-snapshot-repo</id>
+            <name>AWS Snapshot Repository</name>
+            <url>s3://mvnrepository.cambridgeassessment.org.uk/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>maven-s3-release-repo</id>
+            <name>AWS Release Repository</name>
+            <url>s3://mvnrepository.cambridgeassessment.org.uk/releases</url>
+        </repository>
+        <repository>
+            <id>maven-s3-snapshot-repo</id>
+            <name>AWS Snapshot Repository</name>
+            <url>s3://mvnrepository.cambridgeassessment.org.uk/snapshots</url>
+            <snapshots/>
+        </repository>
+    </repositories>
+
     <properties>
         <weblab-common-java.version>0.1-SNAPSHOT</weblab-common-java.version>
         <aspectj.version>1.8.6</aspectj.version>
@@ -290,6 +317,13 @@
     </dependencyManagement>
 
     <build>
+        <extensions>
+            <extension>
+                <groupId>org.springframework.build</groupId>
+                <artifactId>aws-maven</artifactId>
+                <version>5.0.0.RELEASE</version>
+            </extension>
+        </extensions>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -313,4 +347,5 @@
             </plugins>
         </pluginManagement>
     </build>
+
 </project>
