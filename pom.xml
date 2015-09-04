@@ -74,6 +74,7 @@
         <spring-security.version>3.2.7.RELEASE</spring-security.version>
         <spring-hateoas.version>0.16.0.RELEASE</spring-hateoas.version>
         <jackson.version>2.4.6</jackson.version>
+        <slf4j-api.version>1.7.12</slf4j-api.version>
     </properties>
 
     <dependencyManagement>
@@ -312,6 +313,11 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${servlet-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-api.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
