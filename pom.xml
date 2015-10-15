@@ -70,6 +70,7 @@
         <spring-data-jpa.version>1.8.0.RELEASE</spring-data-jpa.version>
         <spring-data-mongodb.version>1.7.0.RELEASE</spring-data-mongodb.version>
         <hibernate.version>4.3.10.Final</hibernate.version>
+        <liquibase.version>3.3.5</liquibase.version>
         <servlet-api.version>3.1.0</servlet-api.version>
         <spring.version>4.1.7.RELEASE</spring.version>
         <spring-security.version>3.2.7.RELEASE</spring-security.version>
@@ -329,6 +330,11 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-core</artifactId>
+                <version>${liquibase.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
