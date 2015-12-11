@@ -61,7 +61,7 @@
         <kie.version>6.1.0.Final</kie.version>
         <postgresql.version>9.4-1201-jdbc41</postgresql.version>
         <sqljdbc.version>4.2</sqljdbc.version>
-        <activiti.version>5.18.0</activiti.version>
+        <activiti.version>5.19.0.1</activiti.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
