@@ -17,6 +17,7 @@
         <module>weblab-common</module>
         <module>weblab-multipart-jersey</module>
         <module>weblab-audit</module>
+		<module>weblab-cross-context</module>
     </modules>
 
     <distributionManagement>
@@ -120,6 +121,11 @@
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-audit</artifactId>
                 <version>${weblab-common-java.version}</version>
+            </dependency>
+			<dependency>
+                <groupId>ucles.weblab</groupId>
+                <artifactId>weblab-cross-context</artifactId>
+                <version>0.2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>commons-fileupload</groupId>
