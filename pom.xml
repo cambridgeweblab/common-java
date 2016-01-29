@@ -17,7 +17,8 @@
         <module>weblab-common</module>
         <module>weblab-multipart-jersey</module>
         <module>weblab-audit</module>
-		<module>weblab-cross-context</module>
+        <module>weblab-cross-context</module>
+        <module>weblab-json-schema</module>
     </modules>
 
     <distributionManagement>
@@ -77,6 +78,7 @@
         <spring-security.version>3.2.7.RELEASE</spring-security.version>
         <spring-hateoas.version>0.16.0.RELEASE</spring-hateoas.version>
         <jackson.version>2.4.6</jackson.version>
+        <jackson-module-jsonSchema.version>2.6.0</jackson-module-jsonSchema.version>
         <slf4j-api.version>1.7.12</slf4j-api.version>
     </properties>
 
@@ -128,6 +130,11 @@
                 <version>0.2-SNAPSHOT</version>
             </dependency>
             <dependency>
+                <groupId>ucles.weblab</groupId>
+                <artifactId>weblab-json-schema</artifactId>
+                <version>${weblab-common-java.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>commons-fileupload</groupId>
                 <artifactId>commons-fileupload</artifactId>
                 <version>${commons-fileupload.version}</version>
@@ -141,6 +148,11 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-jsonSchema</artifactId>
+                <version>${jackson-module-jsonSchema.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish.jersey.media</groupId>
@@ -302,9 +314,19 @@
                 <version>${spring-security.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.hateoas</groupId>
                 <artifactId>spring-hateoas</artifactId>
                 <version>${spring-hateoas.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
