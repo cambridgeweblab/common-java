@@ -77,8 +77,9 @@
         <spring.version>4.1.7.RELEASE</spring.version>
         <spring-security.version>3.2.7.RELEASE</spring-security.version>
         <spring-hateoas.version>0.16.0.RELEASE</spring-hateoas.version>
-        <jackson.version>2.4.6</jackson.version>
-        <jackson-module-jsonSchema.version>2.6.0</jackson-module-jsonSchema.version>
+        <jackson.version>2.7.1</jackson.version>
+        <jackson-databind.version>2.7.1-1-CA-SNAPSHOT</jackson-databind.version>
+        <jackson-module-jsonSchema.version>2.7.1-CA-SNAPSHOT</jackson-module-jsonSchema.version>
         <slf4j-api.version>1.7.12</slf4j-api.version>
     </properties>
 
@@ -326,11 +327,21 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson-databind.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
             <dependency>
