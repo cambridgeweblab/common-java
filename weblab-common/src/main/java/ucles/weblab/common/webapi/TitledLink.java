@@ -4,12 +4,11 @@ import org.springframework.hateoas.Link;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 
 /**
- * A TitledLink is a Hateous link with the addition of a title. So in addition 
+ * A TitledLink is a Hateous link with the addition of a title. So in addition
  * to the rel and href attributes, there will also be a title attribute.
- * 
  */
 public class TitledLink extends Link {
-    
+
     private String title;
 
     public TitledLink(String href, String rel, String title) {
@@ -21,8 +20,11 @@ public class TitledLink extends Link {
         this(linkBuilder.toString(), rel, title);
     }
 
+    protected TitledLink() {
+    }
+
     public String getTitle() {
         return title;
     }
-    
+
 }
