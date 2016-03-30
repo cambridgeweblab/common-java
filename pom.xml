@@ -19,6 +19,7 @@
         <module>weblab-audit</module>
         <module>weblab-cross-context</module>
         <module>weblab-json-schema</module>
+	<module>weblab-i18n</module>
     </modules>
 
     <distributionManagement>
@@ -125,6 +126,13 @@
                 <artifactId>weblab-audit</artifactId>
                 <version>${weblab-common-java.version}</version>
             </dependency>
+		<dependency>
+                <groupId>ucles.weblab</groupId>
+                <artifactId>weblab-i18n</artifactId>
+                <version>${weblab-common-java.version}</version>
+            </dependency>
+
+
 			<dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-cross-context</artifactId>
