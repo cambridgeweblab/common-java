@@ -8,7 +8,7 @@
     <groupId>ucles.weblab</groupId>
     <artifactId>weblab-common-java</artifactId>
     <packaging>pom</packaging>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.3-SNAPSHOT</version>
 
     <modules>
         <module>weblab-files</module>
@@ -50,7 +50,7 @@
     </repositories>
 
     <properties>
-        <weblab-common-java.version>0.1-SNAPSHOT</weblab-common-java.version>
+        <weblab-common-java.version>0.3-SNAPSHOT</weblab-common-java.version>
         <aspectj.version>1.8.6</aspectj.version>
         <commons-beanutils.version>1.9.2</commons-beanutils.version>
         <commons-fileupload.version>1.2.2</commons-fileupload.version>
