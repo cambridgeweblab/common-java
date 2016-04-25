@@ -126,17 +126,15 @@
                 <artifactId>weblab-audit</artifactId>
                 <version>${weblab-common-java.version}</version>
             </dependency>
-		<dependency>
+		    <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-i18n</artifactId>
                 <version>${weblab-common-java.version}</version>
             </dependency>
-
-
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-cross-context</artifactId>
-                <version>0.2-SNAPSHOT</version>
+                <version>${weblab-common-java.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
