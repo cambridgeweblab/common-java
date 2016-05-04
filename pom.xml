@@ -26,12 +26,12 @@
         <repository>
             <id>maven-s3-release-repo</id>
             <name>AWS Release Repository</name>
-            <url>s3://mvnrepository.cambridgeassessment.org.uk/releases</url>
+            <url>s3://mvnrepository.ucles.org.uk/releases</url>
         </repository>
         <snapshotRepository>
             <id>maven-s3-snapshot-repo</id>
             <name>AWS Snapshot Repository</name>
-            <url>s3://mvnrepository.cambridgeassessment.org.uk/snapshots</url>
+            <url>s3://mvnrepository.ucles.org.uk/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -39,12 +39,12 @@
         <repository>
             <id>maven-s3-release-repo</id>
             <name>AWS Release Repository</name>
-            <url>s3://mvnrepository.cambridgeassessment.org.uk/releases</url>
+            <url>s3://mvnrepository.ucles.org.uk/releases</url>
         </repository>
         <repository>
             <id>maven-s3-snapshot-repo</id>
             <name>AWS Snapshot Repository</name>
-            <url>s3://mvnrepository.cambridgeassessment.org.uk/snapshots</url>
+            <url>s3://mvnrepository.ucles.org.uk/snapshots</url>
             <snapshots/>
         </repository>
     </repositories>
