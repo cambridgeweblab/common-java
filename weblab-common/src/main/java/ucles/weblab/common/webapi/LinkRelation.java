@@ -63,6 +63,12 @@ public enum LinkRelation {
      */
     COPYRIGHT,
     /**
+     * Refers to a target to use for creating new instances of a schema.
+     * This link definition SHOULD be a submission link with a non-safe method (like POST).
+     * Ref: <a href="https://tools.ietf.org/html/draft-zyp-json-schema-03#section-6.1.1">draft-zyp-json-schema-03</a>
+     */
+    CREATE,
+    /**
      * The target IRI points to a resource where a submission form can be obtained.
      * Ref: <a href="http://www.iana.org/go/rfc6861">RFC6861</a>
      */
@@ -147,6 +153,11 @@ public enum LinkRelation {
      * Ref: <a href="http://www.w3.org/TR/1999/REC-html401-19991224">http://www.w3.org/TR/1999/REC-html401-19991224</a>
      */
     INDEX,
+    /**
+     * Refers to the target resource that represents collection of instances of a schema.
+     * Ref: <a href="https://tools.ietf.org/html/draft-zyp-json-schema-03#section-6.1.1">draft-zyp-json-schema-03</a>
+     */
+    INSTANCES,
     /**
      * The target IRI points to a resource that is a member of the collection represented by the context IRI.
      * Ref: <a href="http://www.iana.org/go/rfc6573">RFC6573</a>
