@@ -10,14 +10,20 @@ import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 public class TitledLink extends Link {
 
     private String title;
-
-    public TitledLink(String href, String rel, String title) {
+    private String method;
+    
+    public TitledLink(String href, String rel, String title, String method) {
         super(href, rel);
         this.title = title;
+        this.method = method;
     }
 
     public TitledLink(ControllerLinkBuilder linkBuilder, String rel, String title) {
-        this(linkBuilder.toString(), rel, title);
+        this(linkBuilder.toString(), rel, title, null);
+    }
+    
+    public TitledLink(ControllerLinkBuilder linkBuilder, String rel, String title, String method) {
+        this(linkBuilder.toString(), rel, title, method);
     }
 
     protected TitledLink() {
@@ -25,6 +31,10 @@ public class TitledLink extends Link {
 
     public String getTitle() {
         return title;
+    }
+
+    public String getMethod() {
+        return method;
     }
 
 }
