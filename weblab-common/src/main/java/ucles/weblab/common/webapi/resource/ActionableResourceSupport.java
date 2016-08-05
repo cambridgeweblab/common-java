@@ -16,7 +16,7 @@ public class ActionableResourceSupport extends ResourceSupport {
     
     public static TitledLink convert(Action action) {
         
-        TitledLink tl = new TitledLink(action.getHref(), "action:" + action.getRel(), action.getTitle(), action.getMethod(), action.getDescription(), action.getSchema());
+        TitledLink tl = new TitledLink(action.getHref(), "action:" + action.getRel(), action.getTitle(), action.getMethod(), action.getDescription(), action.getSchema(), action.getMediaType());
         return tl;
     }
     
@@ -42,7 +42,8 @@ public class ActionableResourceSupport extends ResourceSupport {
                     ", href='" + getHref() + '\'' +
                     ", title='" + getTitle() + '\'' +
                     ", description='" + description + '\'' +
-                    ", schema=" + getSchema() +
+                    ", schema=" + getSchema() + '\'' +
+                    ", mediaType=" + getMediaType() +
                     '}';
         }
     }

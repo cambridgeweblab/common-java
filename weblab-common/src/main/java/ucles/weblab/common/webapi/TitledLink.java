@@ -13,6 +13,16 @@ public class TitledLink extends Link {
     private String method;
     private String description;
     private JsonSchema schema;
+    private String mediaType;
+
+    public TitledLink(String href, String rel, String title, String method, String description, JsonSchema schema, String mediaType) {
+        super(href, rel);
+        this.title = title;
+        this.method = method;
+        this.description = description;
+        this.schema = schema;
+        this.mediaType = mediaType;
+    }
             
     public TitledLink(String href, String rel, String title, String method, String description, JsonSchema schema) {
         super(href, rel);
@@ -54,5 +64,8 @@ public class TitledLink extends Link {
     public JsonSchema getSchema() {
         return schema;
     }
-    
+
+    public String getMediaType() {
+        return mediaType;
+    }
 }
