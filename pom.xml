@@ -96,6 +96,11 @@
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
+                <artifactId>weblab-spring-boot-starter-actions</artifactId>
+                <version>${weblab-common-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-spring-boot-starter-test</artifactId>
                 <version>${weblab-common-java.version}</version>
             </dependency>
