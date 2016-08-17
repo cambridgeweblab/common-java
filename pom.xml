@@ -21,6 +21,7 @@
         <module>weblab-json-schema</module>
         <module>weblab-i18n</module>
         <module>weblab-forms</module>
+        <module>weblab-feedback</module>
     </modules>
 
     <distributionManagement>
@@ -155,6 +156,11 @@
                 <version>${weblab-common-java.version}</version>
             </dependency>
             <dependency>
+                <groupId>ucles.weblab</groupId>
+                <artifactId>weblab-feedback</artifactId>
+                <version>${weblab-common-java.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>commons-fileupload</groupId>
                 <artifactId>commons-fileupload</artifactId>
                 <version>${commons-fileupload.version}</version>
@@ -218,6 +224,11 @@
                 <groupId>com.microsoft.sqlserver</groupId>
                 <artifactId>sqljdbc</artifactId>
                 <version>${sqljdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>1.4.187</version>
             </dependency>
             <dependency>
                 <groupId>org.activiti</groupId>
