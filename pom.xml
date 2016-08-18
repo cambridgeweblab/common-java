@@ -49,6 +49,13 @@
             <url>s3://mvnrepository.ucles.org.uk/snapshots</url>
             <snapshots/>
         </repository>
+        <repository>
+            <id>spring-snapshot-repo</id>
+            <name>Spring Snapshot Repository</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots/>
+        </repository>
+        
     </repositories>
 
     <properties>
@@ -63,8 +70,12 @@
         <commons-io.version>2.4</commons-io.version>
              
         <!-- spring versions -->
-        <spring-boot.version>1.4.0.RELEASE</spring-boot.version>
-        <spring-data-jpa.version>1.10.2.RELEASE</spring-data-jpa.version>
+        <spring-boot.version>1.4.0.RELEASE</spring-boot.version> 
+        
+        <!-- @TODO Spring data is on snapshot build to handle this bug https://jira.spring.io/browse/DATAJPA-938 -->       
+        <spring-data-releasetrain.version>Hopper-BUILD-SNAPSHOT</spring-data-releasetrain.version>
+        <spring-data-jpa.version>1.10.3.BUILD-SNAPSHOT</spring-data-jpa.version>
+        
         <spring-data-mongodb.version>1.9.2.RELEASE</spring-data-mongodb.version>        
         <spring-security-oauth2.version>2.0.10.RELEASE</spring-security-oauth2.version>
         <spring-mvc-cache-control.version>1.1.1-RELEASE</spring-mvc-cache-control.version>
@@ -106,6 +117,14 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-releasetrain</artifactId>
+                <version>${spring-data-releasetrain.version}</version>
+               <!-- <scope>import</scope>
+                <type>pom</type> -->
+            </dependency>
+
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-spring-boot-starter</artifactId>
