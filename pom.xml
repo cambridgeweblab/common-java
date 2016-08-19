@@ -52,7 +52,7 @@
         <repository>
             <id>spring-snapshot-repo</id>
             <name>Spring Snapshot Repository</name>
-            <url>https://repo.spring.io/snapshot</url>
+            <url>https://repo.spring.io/libs-snapshot</url>
             <snapshots/>
         </repository>
         
@@ -86,7 +86,6 @@
         
         <!-- others -->
         <kie.version>6.1.0.Final</kie.version>
-        <postgresql.version>9.4-1201-jdbc41</postgresql.version> <!--9.4.1209.jre7 -->
         <sqljdbc.version>4.2</sqljdbc.version>
         <activiti.version>5.19.0.1</activiti.version>
         <slf4j-api.version>1.7.21</slf4j-api.version>
