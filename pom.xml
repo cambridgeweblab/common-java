@@ -105,9 +105,9 @@
         <servlet-api.version>3.1.0</servlet-api.version>
         
         <!-- jackson spring boot gives 2.8.1 -->
-        <jackson.version>2.7.1</jackson.version>
-        <jackson-databind.version>2.7.1-1-CA-SNAPSHOT</jackson-databind.version>
-        <jackson-module-jsonSchema.version>2.7.1-CA-SNAPSHOT</jackson-module-jsonSchema.version>
+        <jackson.version>2.8.2</jackson.version>
+        <jackson-databind.version>2.8.2-CA-SNAPSHOT</jackson-databind.version>
+        <jackson-module-jsonSchema.version>2.8.2-CA-SNAPSHOT</jackson-module-jsonSchema.version>
                 
         <!-- test properties -->
         <spring-boot-test>1.4.0.RELEASE</spring-boot-test>
