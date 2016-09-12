@@ -26,6 +26,7 @@ public class TimeSerializerTest {
     
     private TimeSerializer timeSerializer;
     
+    
     JsonGenerator jsonGenerator;
     StringWriter stringWriter;
     
@@ -34,11 +35,9 @@ public class TimeSerializerTest {
     
     @Before
     public void setUp() throws IOException {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
-
         stringWriter = new StringWriter();
         jsonGenerator = new JsonFactory().createGenerator(stringWriter);
-        timeSerializer = new TimeSerializer(formatter);
+        timeSerializer = new TimeSerializer();
     }
     
     

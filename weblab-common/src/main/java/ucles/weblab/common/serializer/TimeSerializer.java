@@ -14,11 +14,11 @@ import java.time.format.DateTimeFormatter;
  * @author Sukhraj
  */
 public class TimeSerializer extends LocalTimeSerializer{
-
-    private static final String TIME_PATTERN = "HH:mm";
     
-    public TimeSerializer(DateTimeFormatter formatter) {
-        super(formatter);
+    private static final String TIME_PATTERN = "HH:mm";
+        
+    public TimeSerializer() {
+        super(DateTimeFormatter.ofPattern(TIME_PATTERN));
     }
     
     /**
@@ -54,7 +54,6 @@ public class TimeSerializer extends LocalTimeSerializer{
      */
     @Override
     protected LocalTimeSerializer withFormat(Boolean useTimestamp, DateTimeFormatter dtf) {
-        
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(TIME_PATTERN);
         return new LocalTimeSerializer(formatter);
     }
