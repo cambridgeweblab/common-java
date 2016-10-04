@@ -13,13 +13,13 @@ import ucles.weblab.common.webapi.TitledLink;
  * @since 03/11/15
  */
 public class ActionableResourceSupport extends ResourceSupport {
-    
+
     public static TitledLink convert(Action action) {
-        
-        TitledLink tl = new TitledLink(action.getHref(), "action:" + action.getRel(), action.getTitle(), action.getMethod(), action.getDescription(), action.getSchema(), action.getMediaType());
+
+        TitledLink tl = new TitledLink(action.getHref(), "action:" + action.getRel(), action.getTitle(), action.getMethod(), action.getDescription(), action.getSchema(), action.getMediaType(), action.getEnctype());
         return tl;
     }
-    
+
     @JsonIgnoreProperties({"jsonSchema"}) // LinkDescriptionObject incorrectly annotates jsonSchema.
     public static class Action extends LinkDescriptionObject {
         private String description;

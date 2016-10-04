@@ -1,6 +1,7 @@
 package ucles.weblab.common.webapi;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
@@ -16,14 +17,17 @@ public class TitledLink extends Link {
     private String description;
     private JsonSchema schema;
     private String mediaType;
+    @JsonProperty("enctype")
+    private String encType;
 
-    public TitledLink(String href, String rel, String title, String method, String description, JsonSchema schema, String mediaType) {
+    public TitledLink(String href, String rel, String title, String method, String description, JsonSchema schema, String mediaType, String encType) {
         super(href, rel);
         this.title = title;
         this.method = method;
         this.description = description;
         this.schema = schema;
         this.mediaType = mediaType;
+        this.encType = encType;
     }
 
     public TitledLink(String href, String rel, String title, String method, String description, JsonSchema schema) {
@@ -69,5 +73,9 @@ public class TitledLink extends Link {
 
     public String getMediaType() {
         return mediaType;
+    }
+
+    public String getEncType() {
+        return encType;
     }
 }
