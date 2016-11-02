@@ -55,35 +55,35 @@
             <url>https://repo.spring.io/libs-snapshot</url>
             <snapshots/>
         </repository>
-        
+
     </repositories>
 
     <properties>
         <weblab-common-java.version>0.4-SNAPSHOT</weblab-common-java.version>
         <aspectj.version>1.8.9</aspectj.version>
         <batik.version>1.7</batik.version>
-        
+
         <!-- common libraries -->
         <commons-beanutils.version>1.9.2</commons-beanutils.version>
         <commons-collections.version>3.2.2</commons-collections.version>
         <commons-fileupload.version>1.2.2</commons-fileupload.version>
         <commons-io.version>2.4</commons-io.version>
-             
+
         <!-- spring versions -->
-        <spring-boot.version>1.4.0.RELEASE</spring-boot.version> 
-        
-        <!-- @TODO Spring data is on snapshot build to handle this bug https://jira.spring.io/browse/DATAJPA-938 -->       
+        <spring-boot.version>1.4.0.RELEASE</spring-boot.version>
+
+        <!-- @TODO Spring data is on snapshot build to handle this bug https://jira.spring.io/browse/DATAJPA-938 -->
         <spring-data-releasetrain.version>Hopper-BUILD-SNAPSHOT</spring-data-releasetrain.version>
         <spring-data-jpa.version>1.10.3.BUILD-SNAPSHOT</spring-data-jpa.version>
-        
-        <spring-data-mongodb.version>1.9.2.RELEASE</spring-data-mongodb.version>        
+
+        <spring-data-mongodb.version>1.9.2.RELEASE</spring-data-mongodb.version>
         <spring-security-oauth2.version>2.0.10.RELEASE</spring-security-oauth2.version>
         <spring-mvc-cache-control.version>1.1.1-RELEASE</spring-mvc-cache-control.version>
         <spring-data-envers.version>1.0.2.RELEASE</spring-data-envers.version>
         <spring.version>4.3.2.RELEASE</spring.version>
         <spring-security.version>4.1.1.RELEASE</spring-security.version>
         <spring-hateoas.version>0.20.0.RELEASE</spring-hateoas.version>
-        
+
         <!-- others -->
         <kie.version>6.1.0.Final</kie.version>
         <sqljdbc.version>4.2</sqljdbc.version>
@@ -91,27 +91,27 @@
         <slf4j-api.version>1.7.21</slf4j-api.version>
         <guava.version>18.0</guava.version>
         <jersey.version>2.23.1</jersey.version>
-        
+
         <!-- maven properties -->
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        
+
         <!--database -->
         <hibernate.version>5.0.9.Final</hibernate.version>
         <liquibase.version>3.4.2</liquibase.version>
         <servlet-api.version>3.1.0</servlet-api.version>
-        
+
         <!-- jackson spring boot gives 2.8.1 -->
         <jackson.version>2.8.2</jackson.version>
         <jackson-databind.version>2.8.2-CA-SNAPSHOT</jackson-databind.version>
         <jackson-module-jsonSchema.version>2.8.2-CA-SNAPSHOT</jackson-module-jsonSchema.version>
-                
+
         <!-- test properties -->
         <spring-boot-test>1.4.0.RELEASE</spring-boot-test>
-        <spring-test>4.3.2.RELEASE</spring-test>        
+        <spring-test>4.3.2.RELEASE</spring-test>
     </properties>
 
     <dependencyManagement>
@@ -523,7 +523,7 @@
                 <artifactId>liquibase-core</artifactId>
                 <version>${liquibase.version}</version>
             </dependency>
-            
+
             <!-- tests -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -533,10 +533,10 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>spring-test</artifactId>                
+                <artifactId>spring-test</artifactId>
                 <version>${spring-test}</version>
             </dependency>
-            
+
         </dependencies>
     </dependencyManagement>
 
@@ -586,4 +586,31 @@
         </pluginManagement>
     </build>
 
+    <profiles>
+        <profile>
+            <id>shippable</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                          <groupId>org.apache.maven.plugins</groupId>
+                          <artifactId>maven-surefire-plugin</artifactId>
+                          <configuration>
+                            <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                            <reportsDirectory>../shippable/testresults</reportsDirectory>
+                          </configuration>
+                        </plugin>
+                        <plugin>
+                          <groupId>org.apache.maven.plugins</groupId>
+                          <artifactId>maven-failsafe-plugin</artifactId>
+                          <configuration>
+                            <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                            <reportsDirectory>../shippable/testresults</reportsDirectory>
+                          </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
 </project>
