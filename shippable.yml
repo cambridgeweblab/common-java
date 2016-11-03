@@ -12,3 +12,13 @@ build:
     - mkdir -p shippable/testresults
     - mvn clean
     - mvn -Pshippable deploy
+
+integrations:
+  notifications:
+    - integrationName: hipchat
+      type: hipchat
+      recipients:
+        - '#Everyone'
+      branches:
+        only:
+          - master
