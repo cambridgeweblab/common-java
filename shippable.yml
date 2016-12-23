@@ -10,8 +10,8 @@ env:
 build:
   ci:
     - mkdir -p shippable/testresults
-    - mvn clean
-    - mvn -Pshippable deploy
+    - mvn -B clean
+    - mvn -B -Pshippable deploy
 
 integrations:
   notifications:
@@ -19,6 +19,10 @@ integrations:
       type: hipchat
       recipients:
         - '#Everyone'
+        - '#Java%20Lava'
       branches:
         only:
           - master
+      on_success: always
+      on_failure: always
+
