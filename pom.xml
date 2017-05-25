@@ -74,6 +74,7 @@
         <spring-hateoas.version>0.23.0.RELEASE</spring-hateoas.version>
 
         <!-- others -->
+        <aws-sdk.version>1.11.133</aws-sdk.version>
         <kie.version>6.1.0.Final</kie.version>
         <sqljdbc.version>4.2</sqljdbc.version>
         <activiti.version>5.19.0.1</activiti.version>
@@ -244,6 +245,16 @@
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
                 <version>1.4.187</version>
+            </dependency>
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-java-sdk-core</artifactId>
+                <version>${aws-sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-java-sdk-s3</artifactId>
+                <version>${aws-sdk.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.activiti</groupId>
