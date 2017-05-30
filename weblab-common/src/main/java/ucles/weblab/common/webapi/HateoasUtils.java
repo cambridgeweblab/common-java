@@ -46,13 +46,14 @@ public class HateoasUtils {
      * @return the URI string
      */
     public static String toUriString(ControllerLinkBuilder linkBuilder, boolean withParameters) {
+        // TODO: validate that toUriComponentsBuilder() is OK and doesn't need replacing with UriComponentsBuilder.fromUriString(...toString()) to avoid double-encoding.
         UriComponentsBuilder uriComponentsBuilder = linkBuilder.toUriComponentsBuilder();
         if (!withParameters) {
             uriComponentsBuilder = uriComponentsBuilder.replaceQuery(null);
         }
         return uriComponentsBuilder.build(false).toString();
     }
-    
+
     /**
      * Registers additional converters with Spring HATEOAS.
      * Spring HATEOAS otherwise only registers default converters.
