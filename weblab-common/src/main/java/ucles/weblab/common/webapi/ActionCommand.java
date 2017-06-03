@@ -24,6 +24,12 @@ public @interface ActionCommand {
     /** @return title of the action, to be used for display purposes. Defaults to {@link #message() message} if not specified. */
     String title() default "";
 
+    /**
+     * @return a message key to look up a translation according to the current {@link java.util.Locale}.
+     * The result will then override the {@link #title() title} property.
+     */
+    String titleKey() default "";
+
     /** @return description of the action, to be used for display purposes. */
     String description() default "";
 
@@ -44,8 +50,8 @@ public @interface ActionCommand {
 
     /** @return the parameters to be passed to the controller method for pre-defined path variables. */
     ActionParameter[] pathVariables() default {};
-    
+
     ActionParameterNameValue[] workFlowVariables() default {};
-    
+
     boolean createNewKey() default false;
 }
