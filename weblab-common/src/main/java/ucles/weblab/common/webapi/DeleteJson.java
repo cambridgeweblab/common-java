@@ -16,7 +16,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 /**
  * Shorthand for a DELETE handler mapping with any response body expected to be JSON
  */
-@RequestMapping(method = DELETE, consumes = APPLICATION_JSON_VALUE)
+@RequestMapping(method = DELETE)
 @Target(METHOD)
 @Retention(RUNTIME)
 @Documented
@@ -36,6 +36,9 @@ public @interface DeleteJson {
 
     @AliasFor(annotation = RequestMapping.class, attribute = "headers")
     String[] headers() default {};
+
+    @AliasFor(annotation = RequestMapping.class, attribute = "consumes")
+    String[] consumes() default {};
 
     @AliasFor(annotation = RequestMapping.class, attribute = "produces")
     String[] produces() default { APPLICATION_JSON_UTF8_VALUE };
