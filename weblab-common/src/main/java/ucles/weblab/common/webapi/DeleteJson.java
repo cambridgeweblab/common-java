@@ -1,24 +1,7 @@
-/*
- * Copyright 2002-2015 the original author or authors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package ucles.weblab.common.webapi;
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -26,23 +9,18 @@ import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
-import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
+import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 
 /**
- * Shorthand for a POST handler mapping which consumes JSON and returns "201 Created".
- * Can use @{@link ResponseStatus} to override status.
- *
- * @author Sam Brannen
+ * Shorthand for a DELETE handler mapping with any response body expected to be JSON
  */
-@RequestMapping(method = POST, consumes = APPLICATION_JSON_VALUE)
-@ResponseStatus(CREATED)
+@RequestMapping(method = DELETE, consumes = APPLICATION_JSON_VALUE)
 @Target(METHOD)
 @Retention(RUNTIME)
 @Documented
-public @interface PostJson {
+public @interface DeleteJson {
 
     @AliasFor(annotation = RequestMapping.class, attribute = "name")
     String name() default "";
