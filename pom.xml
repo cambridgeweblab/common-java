@@ -149,6 +149,11 @@
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
+                <artifactId>weblab-identity-auth0</artifactId>
+                <version>${weblab-common-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-audit</artifactId>
                 <version>${weblab-common-java.version}</version>
             </dependency>
