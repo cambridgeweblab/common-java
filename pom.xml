@@ -64,8 +64,8 @@
 
         <!-- spring versions -->
         <spring-boot.version>1.5.3.RELEASE</spring-boot.version>
-        <spring-data-jpa.version>1.11.1.RELEASE</spring-data-jpa.version>
-        <spring-data-mongodb.version>1.9.2.RELEASE</spring-data-mongodb.version>
+        <spring-data-jpa.version>1.11.3.RELEASE</spring-data-jpa.version>
+        <spring-data-mongodb.version>1.10.3.RELEASE</spring-data-mongodb.version>
         <spring-security-oauth2.version>2.0.10.RELEASE</spring-security-oauth2.version>
         <spring-mvc-cache-control.version>1.1.1-RELEASE</spring-mvc-cache-control.version>
         <spring-data-envers.version>1.0.2.RELEASE</spring-data-envers.version>
