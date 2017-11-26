@@ -51,6 +51,20 @@
         </repository>
     </repositories>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven-s3-release-repo</id>
+            <name>AWS Release Repository</name>
+            <url>s3://mvnrepository.ucles.org.uk/releases</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>maven-s3-snapshot-repo</id>
+            <name>AWS Snapshot Repository</name>
+            <url>s3://mvnrepository.ucles.org.uk/snapshots</url>
+            <snapshots/>
+        </pluginRepository>
+    </pluginRepositories>
+
     <properties>
         <weblab-common-java.version>0.5-SNAPSHOT</weblab-common-java.version>
         <aspectj.version>1.8.9</aspectj.version>
