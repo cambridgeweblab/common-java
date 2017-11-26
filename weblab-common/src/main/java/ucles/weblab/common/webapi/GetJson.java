@@ -37,6 +37,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @Target(METHOD)
 @Retention(RUNTIME)
 @Documented
+@SuppressWarnings("CPD-START")
 public @interface GetJson {
 
     @AliasFor(annotation = RequestMapping.class, attribute = "name")

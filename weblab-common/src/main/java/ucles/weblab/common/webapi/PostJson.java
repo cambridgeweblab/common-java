@@ -42,6 +42,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @Target(METHOD)
 @Retention(RUNTIME)
 @Documented
+@SuppressWarnings("CPD-START")
 public @interface PostJson {
 
     @AliasFor(annotation = RequestMapping.class, attribute = "name")

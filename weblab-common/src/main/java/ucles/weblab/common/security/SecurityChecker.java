@@ -14,6 +14,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.util.SimpleMethodInvocation;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.function.Predicate;
 
@@ -23,14 +24,14 @@ import java.util.function.Predicate;
 public class SecurityChecker {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    private static class SecurityObject {
-
-        public void triggerCheck() { /*NOP*/ }
-    }
     private final MethodSecurityExpressionHandler expressionHandler;
 
     private Method triggerCheckMethod;
     private SpelExpressionParser parser;
+
+    private static class SecurityObject {
+        public void triggerCheck() { /*NOP*/ }
+    }
 
     public SecurityChecker(MethodSecurityExpressionHandler expressionHandler) {
         this.expressionHandler = expressionHandler;
@@ -77,11 +78,7 @@ public class SecurityChecker {
         Secured secured = methodInvocation.getMethod().getAnnotation(Secured.class);
         if (secured != null) {
             if (authentication != null) {
-                for (String role : secured.value()) {
-                    if (contains(authentication.getAuthorities(), a -> a.getAuthority().equals(role))) {
-                        return true;
-                    }
-                }
+                return Arrays.stream(secured.value()).anyMatch(role -> contains(authentication.getAuthorities(), a -> a.getAuthority().equals(role)));
             }
             return false;
         }

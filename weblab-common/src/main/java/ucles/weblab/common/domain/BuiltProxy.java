@@ -20,8 +20,9 @@ import static java.util.Collections.unmodifiableMap;
  *
  * @since 27/08/2013
  */
+@SuppressWarnings("PMD.OverrideBothEqualsAndHashcode")
 public class BuiltProxy<T extends Buildable<T>> implements InvocationHandler {
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused", "PMD.NonStaticInitializer"})
     private static final Map<Class<?>, Object> DEFAULT_VALUES = unmodifiableMap(new HashMap<Class<?>, Object>() {
         // Default primitive values
         private boolean b;
@@ -94,6 +95,7 @@ public class BuiltProxy<T extends Buildable<T>> implements InvocationHandler {
 
     // Below methods copied from http://www.javaranch.com/journal/2004/04/files/DynaDTODynaBean.java
 
+    @SuppressWarnings("PMD.CompareObjectsWithEquals")
     private boolean dynaBeanEquals(DynaBean bean1, DynaBean bean2) {
         if (bean1 == bean2) {
             return true;
@@ -118,16 +120,18 @@ public class BuiltProxy<T extends Buildable<T>> implements InvocationHandler {
         return isEqual;
     }
 
+    @SuppressWarnings("PMD.CompareObjectsWithEquals")
     private boolean dynaPropertyEquals(DynaProperty prop1,
                                        DynaProperty prop2,
                                        Object value1,
                                        Object value2) {
-        return (prop1 == prop2) ||
-                ((prop1 != null) && (prop2 != null) && prop1.getName().equals(prop2.getName()) && prop1.getType().equals(prop2.getType()) && valueEquals(value1, value2));
+        return prop1 == prop2 ||
+                prop1 != null && prop2 != null && prop1.getName().equals(prop2.getName()) && prop1.getType().equals(prop2.getType()) && valueEquals(value1, value2);
     }
 
+    @SuppressWarnings("PMD.CompareObjectsWithEquals")
     private boolean valueEquals(Object value1, Object value2) {
-        return (value1 == value2) || ((value1 != null) && value1.equals(value2));
+        return value1 == value2 || value1 != null && value1.equals(value2);
     }
 
     /**
@@ -143,7 +147,7 @@ public class BuiltProxy<T extends Buildable<T>> implements InvocationHandler {
             int propHashCode = prop.getName().hashCode() ^
                     prop.getType().hashCode();
             Object propVal = backingBean.get(prop.getName());
-            int valHashCode = (propVal == null ? 0 : propVal.hashCode());
+            int valHashCode = propVal == null ? 0 : propVal.hashCode();
             int c = propHashCode ^ valHashCode;
             result = 37 * result + c;
         }
@@ -163,7 +167,7 @@ public class BuiltProxy<T extends Buildable<T>> implements InvocationHandler {
                 out.append(", ");
             }
         }
-        out.append("]");
+        out.append(']');
         return out.toString();
     }
 
@@ -173,9 +177,7 @@ public class BuiltProxy<T extends Buildable<T>> implements InvocationHandler {
      * {@code void}, null is returned.
      */
     public static <T> T defaultValue(Class<T> type) {
-        @SuppressWarnings({"UnnecessaryLocalVariable", "unchecked"})
-        final T t = (T) DEFAULT_VALUES.get(type);
-        return t;
+        return (T) DEFAULT_VALUES.get(type);
     }
 
 }

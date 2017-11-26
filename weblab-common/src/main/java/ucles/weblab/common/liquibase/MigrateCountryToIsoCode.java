@@ -78,12 +78,12 @@ public class MigrateCountryToIsoCode implements CustomSqlChange, CustomSqlRollba
 
     @Override
     public void setUp() throws SetupException {
-
+        // No setup required
     }
 
     @Override
     public void setFileOpener(ResourceAccessor resourceAccessor) {
-
+        // File opener not required
     }
 
     @Override

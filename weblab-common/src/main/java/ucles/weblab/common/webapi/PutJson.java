@@ -16,20 +16,20 @@
 
 package ucles.weblab.common.webapi;
 
-import static java.lang.annotation.ElementType.*;
-import static java.lang.annotation.RetentionPolicy.*;
-
-import static org.springframework.http.HttpStatus.*;
-import static org.springframework.http.MediaType.*;
-import static org.springframework.web.bind.annotation.RequestMethod.*;
+import org.springframework.core.annotation.AliasFor;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import org.springframework.core.annotation.AliasFor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import static org.springframework.http.HttpStatus.NO_CONTENT;
+import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 
 /**
  * @author Sam Brannen
@@ -40,6 +40,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @Target(METHOD)
 @Retention(RUNTIME)
 @Documented
+@SuppressWarnings("CPD-START")
 public @interface PutJson {
 
 	@AliasFor(annotation = RequestMapping.class, attribute = "name")

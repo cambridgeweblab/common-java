@@ -52,7 +52,7 @@ public class TitledLink extends Link {
         this(linkBuilder.toString(), rel, title, method);
     }
 
-    protected TitledLink() {
+    protected TitledLink() { // For Jackson
     }
 
     public String getTitle() {

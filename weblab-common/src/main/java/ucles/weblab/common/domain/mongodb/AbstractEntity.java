@@ -6,12 +6,13 @@ import org.springframework.data.annotation.Id;
 /**
  * @since 15/02/15
  */
+@SuppressWarnings("PMD.AbstractClassWithoutAbstractMethod")
 public abstract class AbstractEntity {
     @Id
     @JsonIgnore
     private String id;
 
-    protected AbstractEntity() {
+    protected AbstractEntity() { // for Jackson etc
     }
 
     protected AbstractEntity(String id) {
@@ -24,17 +25,21 @@ public abstract class AbstractEntity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         AbstractEntity entity = (AbstractEntity) o;
 
-        return !(id != null ? !id.equals(entity.id) : entity.id != null);
+        return id == null ? entity.id == null : id.equals(entity.id);
 
     }
 
     @Override
     public int hashCode() {
-        return id != null ? id.hashCode() : 0;
+        return id == null ? 0 : id.hashCode();
     }
 }

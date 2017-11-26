@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
  *
  * @since 07/05/15
  */
-public class MoreMediaTypes {
+public final class MoreMediaTypes {
     /**
      * @deprecated Use {@link MediaType#APPLICATION_JSON_UTF8_VALUE} instead.
      */

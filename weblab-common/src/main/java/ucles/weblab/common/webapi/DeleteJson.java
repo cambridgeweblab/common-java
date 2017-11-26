@@ -10,7 +10,6 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 
 /**
@@ -20,6 +19,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 @Target(METHOD)
 @Retention(RUNTIME)
 @Documented
+@SuppressWarnings("CPD-START")
 public @interface DeleteJson {
 
     @AliasFor(annotation = RequestMapping.class, attribute = "name")

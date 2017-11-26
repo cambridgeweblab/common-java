@@ -13,7 +13,7 @@ import java.util.function.Function;
  *
  * @since 24/08/15
  */
-public class HateoasConverterRegistrar {
+public final class HateoasConverterRegistrar {
     private HateoasConverterRegistrar() { // Prevent instantiation
     }
 
@@ -35,7 +35,7 @@ public class HateoasConverterRegistrar {
             }
         }
         catch (Exception ex) {
-            throw new RuntimeException(ex);
+            throw new RuntimeException(ex); // NOPMD
         }
     }
 
@@ -55,7 +55,7 @@ public class HateoasConverterRegistrar {
             service.addConverter(converterSource.apply(service));
         }
         catch (Exception ex) {
-            throw new RuntimeException(ex);
+            throw new RuntimeException(ex); // NOPMD
         }
     }
 }
