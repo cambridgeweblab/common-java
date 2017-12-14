@@ -52,6 +52,12 @@
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-jsonSchema</artifactId>
         </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+            <optional>true</optional>
+        </dependency>
 
         <!--Tests -->
         <dependency>
