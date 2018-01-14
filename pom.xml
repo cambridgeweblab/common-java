@@ -80,7 +80,8 @@
         <spring-boot.version>1.5.3.RELEASE</spring-boot.version>
         <spring-data-jpa.version>1.11.3.RELEASE</spring-data-jpa.version>
         <spring-data-mongodb.version>1.10.3.RELEASE</spring-data-mongodb.version>
-        <spring-security-oauth2.version>2.0.10.RELEASE</spring-security-oauth2.version>
+        <spring-security-oauth2.version>2.2.0.RELEASE</spring-security-oauth2.version>
+        <spring-security-jwt.version>1.0.8.RELEASE</spring-security-jwt.version>
         <spring-mvc-cache-control.version>1.1.1-RELEASE</spring-mvc-cache-control.version>
         <spring-data-envers.version>1.0.2.RELEASE</spring-data-envers.version>
         <spring.version>4.3.8.RELEASE</spring.version>
