@@ -11,17 +11,7 @@
     <version>0.5-SNAPSHOT</version>
 
     <modules>
-        <module>weblab-files</module>
-        <module>weblab-spring-boot</module>
-        <module>sample-webapp</module>
         <module>weblab-common</module>
-        <module>weblab-multipart-jersey</module>
-        <module>weblab-audit</module>
-        <module>weblab-cross-context</module>
-        <module>weblab-json-schema</module>
-        <module>weblab-i18n</module>
-        <module>weblab-forms</module>
-        <module>weblab-feedback</module>
     </modules>
 
     <distributionManagement>
