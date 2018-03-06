@@ -14,11 +14,11 @@ build:
   ci:
     - mkdir -p shippable/testresults
     - mvn --batch-mode clean
-    # Only deploy master
-    - if [[ $BRANCH == "master" ]] && [[ $IS_PULL_REQUEST != true ]]; then mvn --batch-mode --update-snapshots -Pshippable deploy; fi
+    # Only deploy release-2.0.x ** FOR THIS BRANCH ONLY ** DO NOT MERGE TO MASTER
+    - if [[ $BRANCH == "release-2.0.x" ]] && [[ $IS_PULL_REQUEST != true ]]; then mvn --batch-mode --update-snapshots -Pshippable deploy; fi
     # Otherwise verify all other configs
-    - if [[ $BRANCH == "master" ]] && [[ $IS_PULL_REQUEST == true ]]; then mvn --batch-mode --update-snapshots -Pshippable verify; fi
-    - if [[ $BRANCH != "master" ]]; then mvn --batch-mode --update-snapshots -Pshippable verify; fi
+    - if [[ $BRANCH == "release-2.0.x" ]] && [[ $IS_PULL_REQUEST == true ]]; then mvn --batch-mode --update-snapshots -Pshippable verify; fi
+    - if [[ $BRANCH != "release-2.0.x" ]]; then mvn --batch-mode --update-snapshots -Pshippable verify; fi
 
 integrations:
   notifications:
