@@ -94,8 +94,8 @@
 
         <!-- jackson - Spring Boot gives 2.9.x -->
         <jackson.version>2.8.3</jackson.version><!-- Was 2.8.2 but nudging up for BOM in s-b-deps -->
-        <jackson-databind.version>2.8.2-CA-SNAPSHOT</jackson-databind.version>
-        <jackson-module-jsonSchema.version>2.8.2-CA-SNAPSHOT</jackson-module-jsonSchema.version>
+        <jackson-databind.version>2.9.4-CA-SNAPSHOT</jackson-databind.version>
+        <jackson-module-jsonSchema.version>2.9.4-CA-SNAPSHOT</jackson-module-jsonSchema.version>
 
     </properties>
 
