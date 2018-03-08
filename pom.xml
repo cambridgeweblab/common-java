@@ -10,6 +10,11 @@
     <packaging>pom</packaging>
     <version>2.0.0-SNAPSHOT</version>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>2.0.0.RELEASE</version>
+    </parent>
     <modules>
         <module>weblab-common</module>
     </modules>
@@ -57,7 +62,6 @@
 
     <properties>
         <weblab-common-java.version>2.0.0-SNAPSHOT</weblab-common-java.version>
-        <aspectj.version>1.8.9</aspectj.version>
         <batik.version>1.7</batik.version>
 
         <!-- common libraries -->
@@ -67,27 +71,18 @@
         <commons-io.version>2.4</commons-io.version>
 
         <!-- spring versions -->
-        <spring-boot.version>2.0.0.RELEASE</spring-boot.version>
-        <spring-data-jpa.version>1.11.3.RELEASE</spring-data-jpa.version>
-        <spring-data-mongodb.version>1.10.3.RELEASE</spring-data-mongodb.version>
         <spring-security-oauth2.version>2.2.0.RELEASE</spring-security-oauth2.version>
         <spring-security-jwt.version>1.0.9.RELEASE</spring-security-jwt.version>
         <spring-mvc-cache-control.version>1.1.1-RELEASE</spring-mvc-cache-control.version>
         <spring-data-envers.version>1.0.2.RELEASE</spring-data-envers.version>
-        <spring.version>5.0.4.RELEASE</spring.version>
-        <spring-security.version>5.0.2.RELEASE</spring-security.version>
-        <spring-hateoas.version>0.23.0.RELEASE</spring-hateoas.version>
 
         <!-- others -->
         <aws-sdk.version>1.11.133</aws-sdk.version>
         <kie.version>6.1.0.Final</kie.version>
-        <sqljdbc.version>4.2</sqljdbc.version>
+        <!-- Override later version mostly out of caution than experience -->
+        <mssql-jdbc.version>4.2</mssql-jdbc.version>
         <activiti.version>5.19.0.1</activiti.version>
-        <slf4j-api.version>1.7.25</slf4j-api.version>
         <guava.version>18.0</guava.version>
-        <jersey.version>2.23.1</jersey.version>
-        <lombok.version>1.16.10</lombok.version>
-        <logback.version>1.1.11</logback.version>
 
         <!-- maven properties -->
         <java.version>1.8</java.version>
@@ -96,19 +91,12 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <!--database -->
-        <hibernate.version>5.0.9.Final</hibernate.version>
-        <liquibase.version>3.4.2</liquibase.version>
-        <servlet-api.version>3.1.0</servlet-api.version>
 
-        <!-- jackson spring boot gives 2.8.1 -->
-        <jackson.version>2.8.2</jackson.version>
+        <!-- jackson - Spring Boot gives 2.9.x -->
+        <jackson.version>2.8.3</jackson.version><!-- Was 2.8.2 but nudging up for BOM in s-b-deps -->
         <jackson-databind.version>2.8.2-CA-SNAPSHOT</jackson-databind.version>
         <jackson-module-jsonSchema.version>2.8.2-CA-SNAPSHOT</jackson-module-jsonSchema.version>
 
-        <!-- test properties -->
-        <spring-boot-test>${spring-boot.version}</spring-boot-test>
-        <spring-test>${spring.version}</spring-test>
     </properties>
 
     <dependencyManagement>
@@ -244,16 +232,6 @@
                 <version>${kie.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.postgresql</groupId>
-                <artifactId>postgresql</artifactId>
-                <version>${postgresql.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.microsoft.sqlserver</groupId>
-                <artifactId>sqljdbc</artifactId>
-                <version>${sqljdbc.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
                 <version>1.4.187</version>
@@ -370,126 +348,10 @@
                 </exclusions>
             </dependency>
 
-            <!-- Spring Boot dependencies needed outside of Spring Boot modules -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-aop</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-actuator</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-jpa</artifactId>
-                <version>${spring-data-jpa.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-mongodb</artifactId>
-                <version>${spring-data-mongodb.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-entitymanager</artifactId>
-                <version>${hibernate.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-jpamodelgen</artifactId>
-                <version>${hibernate.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-aop</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-expression</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-orm</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-tx</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-webmvc</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-web</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.security</groupId>
-                <artifactId>spring-security-config</artifactId>
-                <version>${spring-security.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.security</groupId>
-                <artifactId>spring-security-core</artifactId>
-                <version>${spring-security.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.security</groupId>
-                <artifactId>spring-security-web</artifactId>
-                <version>${spring-security.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.hateoas</groupId>
-                <artifactId>spring-hateoas</artifactId>
-                <version>${spring-hateoas.version}</version>
-            </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson-databind.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.datatype</groupId>
-                <artifactId>jackson-datatype-jsr310</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-beanutils</groupId>
@@ -512,40 +374,6 @@
                 <artifactId>commons-lang</artifactId>
                 <version>2.4</version>
             </dependency>
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>${servlet-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.liquibase</groupId>
-                <artifactId>liquibase-core</artifactId>
-                <version>${liquibase.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
-
-            <!-- tests -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-test</artifactId>
-                <scope>test</scope>
-                <version>${spring-boot-test}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-test</artifactId>
-                <version>${spring-test}</version>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
 
