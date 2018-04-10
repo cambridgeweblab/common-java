@@ -79,8 +79,6 @@
         <!-- others -->
         <aws-sdk.version>1.11.133</aws-sdk.version>
         <kie.version>6.1.0.Final</kie.version>
-        <!-- Override later version mostly out of caution than experience -->
-        <mssql-jdbc.version>4.2</mssql-jdbc.version>
         <activiti.version>5.19.0.1</activiti.version>
         <guava.version>18.0</guava.version>
 
