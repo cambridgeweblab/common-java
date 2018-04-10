@@ -44,7 +44,7 @@ public class ConfigurationHealthCheck extends AbstractHealthIndicator {
 
 
     @Override
-    protected void doHealthCheck(Builder bldr) {
+    final protected void doHealthCheck(Builder bldr) {
 
         List<String> missing = requiredProperties.stream()
                 .filter(key -> !environment.containsProperty(key))
