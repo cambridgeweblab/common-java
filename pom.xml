@@ -103,7 +103,7 @@
 
         <!-- jackson spring boot gives 2.8.1 -->
         <jackson.version>2.8.2</jackson.version>
-        <jackson-databind.version>2.8.2-CA-SNAPSHOT</jackson-databind.version>
+        <jackson-databind.version>2.9.10.1</jackson-databind.version>
         <jackson-module-jsonSchema.version>2.8.2-CA-SNAPSHOT</jackson-module-jsonSchema.version>
 
         <!-- test properties -->
