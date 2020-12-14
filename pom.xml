@@ -102,7 +102,7 @@
         <servlet-api.version>3.1.0</servlet-api.version>
 
         <!-- jackson spring boot gives 2.8.1 -->
-        <jackson.version>2.8.2</jackson.version>
+        <jackson.version>2.12.0</jackson.version>
         <jackson-databind.version>2.8.2-CA-SNAPSHOT</jackson-databind.version>
         <jackson-module-jsonSchema.version>2.8.2-CA-SNAPSHOT</jackson-module-jsonSchema.version>
 
