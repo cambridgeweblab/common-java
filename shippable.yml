@@ -14,11 +14,11 @@ build:
   ci:
     - mkdir -p shippable/testresults
     - mvn --batch-mode clean
-    # Only deploy master
-    - if [[ $BRANCH == "master" ]] && [[ $IS_PULL_REQUEST != true ]]; then mvn --batch-mode --update-snapshots -Pshippable deploy; fi
+    # Only deploy main
+    - if [[ $BRANCH == "main" ]] && [[ $IS_PULL_REQUEST != true ]]; then mvn --batch-mode --update-snapshots -Pshippable deploy; fi
     # Otherwise verify all other configs
-    - if [[ $BRANCH == "master" ]] && [[ $IS_PULL_REQUEST == true ]]; then mvn --batch-mode --update-snapshots -Pshippable verify; fi
-    - if [[ $BRANCH != "master" ]]; then mvn --batch-mode --update-snapshots -Pshippable verify; fi
+    - if [[ $BRANCH == "main" ]] && [[ $IS_PULL_REQUEST == true ]]; then mvn --batch-mode --update-snapshots -Pshippable verify; fi
+    - if [[ $BRANCH != "main" ]]; then mvn --batch-mode --update-snapshots -Pshippable verify; fi
 
 integrations:
   notifications:
@@ -29,7 +29,7 @@ integrations:
         - '#Java%20Lava'
       branches:
         only:
-          - master
+          - main
       on_success: always
       on_failure: always
 
