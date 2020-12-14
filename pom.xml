@@ -8,12 +8,12 @@
     <groupId>ucles.weblab</groupId>
     <artifactId>weblab-common-java</artifactId>
     <packaging>pom</packaging>
-    <version>2.0.0-SNAPSHOT</version>
+    <version>2.1.0-SNAPSHOT</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId> <!-- for dependencies + plugin config such as git.properties -->
-        <version>2.0.2.RELEASE</version>
+        <version>2.1.17.RELEASE</version>
     </parent>
     <modules>
         <module>weblab-common</module>
