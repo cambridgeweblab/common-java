@@ -92,7 +92,7 @@
 
         <!-- jackson - Spring 5 requires 2.9.x -->
         <jackson.version>2.9.4</jackson.version>
-        <jackson-databind.version>2.9.4-CA-SNAPSHOT</jackson-databind.version>
+        <jackson-databind.version>2.9.10.5</jackson-databind.version>
         <jackson-module-jsonSchema.version>2.9.4-CA-SNAPSHOT</jackson-module-jsonSchema.version>
 
     </properties>
