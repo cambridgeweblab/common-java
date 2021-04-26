@@ -68,7 +68,7 @@
         <commons-beanutils.version>1.9.2</commons-beanutils.version>
         <commons-collections.version>3.2.2</commons-collections.version>
         <commons-fileupload.version>1.2.2</commons-fileupload.version>
-        <commons-io.version>2.4</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
 
         <!-- spring versions -->
         <spring-security-oauth2.version>2.2.0.RELEASE</spring-security-oauth2.version>
