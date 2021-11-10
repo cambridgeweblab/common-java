@@ -92,7 +92,7 @@
 
         <!-- jackson - Spring 5 requires 2.9.x -->
         <jackson.version>2.9.6</jackson.version>
-        <jackson-databind.version>2.9.6</jackson-databind.version> <!-- Note: doesn't include https://github.com/cambridgeweblab/jackson-databind/commit/54a988aba00b81d3664d5294827e3678c775152f -->
+        <jackson-databind.version>2.9.10.7</jackson-databind.version> <!-- Note: doesn't include https://github.com/cambridgeweblab/jackson-databind/commit/54a988aba00b81d3664d5294827e3678c775152f -->
         <jackson-module-jsonSchema.version>2.9.6</jackson-module-jsonSchema.version>
 
     </properties>
