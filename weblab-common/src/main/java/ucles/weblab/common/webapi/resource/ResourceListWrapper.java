@@ -1,6 +1,6 @@
 package ucles.weblab.common.webapi.resource;
 
-import org.springframework.hateoas.ResourceSupport;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.util.List;
 import java.util.stream.Collector;
@@ -9,9 +9,9 @@ import java.util.stream.Collectors;
 /**
  * A wrapper around a list of resources which allows links to be added.
  *
- * @since 27/07/15
+ * @deprecated Use {@link org.springframework.hateoas.CollectionModel} instead
  */
-public class ResourceListWrapper<T> extends ResourceSupport {
+public class ResourceListWrapper<T> extends RepresentationModel<ResourceListWrapper<T>> {
     private final List<T> list;
 
     ResourceListWrapper(List<T> list) {

@@ -3,10 +3,11 @@ package ucles.weblab.common.webapi;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.hateoas.Link;
-import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+
 /**
- * A TitledLink is a Hateous link with the addition of a title. So in addition
+ * A TitledLink is a Hateoas link with the addition of a title. So in addition
  * to the rel and href attributes, there will also be a title attribute.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,7 +22,8 @@ public class TitledLink extends Link {
     private String encType;
 
     public TitledLink(String href, String rel, String title, String method, String description, JsonSchema schema, String mediaType, String encType) {
-        super(href, rel);
+        //noinspection deprecation
+        super(href, rel); // all useful constructors are deprecated, so we cannot avoid this
         this.title = title;
         this.method = method;
         this.description = description;
@@ -31,7 +33,8 @@ public class TitledLink extends Link {
     }
 
     public TitledLink(String href, String rel, String title, String method, String description, JsonSchema schema) {
-        super(href, rel);
+        //noinspection deprecation
+        super(href, rel); // all useful constructors are deprecated, so we cannot avoid this
         this.title = title;
         this.method = method;
         this.description = description;
@@ -39,16 +42,17 @@ public class TitledLink extends Link {
     }
 
     public TitledLink(String href, String rel, String title, String method) {
-        super(href, rel);
+        //noinspection deprecation
+        super(href, rel); // all useful constructors are deprecated, so we cannot avoid this
         this.title = title;
         this.method = method;
     }
 
-    public TitledLink(ControllerLinkBuilder linkBuilder, String rel, String title) {
+    public TitledLink(WebMvcLinkBuilder linkBuilder, String rel, String title) {
         this(linkBuilder.toString(), rel, title, null);
     }
 
-    public TitledLink(ControllerLinkBuilder linkBuilder, String rel, String title, String method) {
+    public TitledLink(WebMvcLinkBuilder linkBuilder, String rel, String title, String method) {
         this(linkBuilder.toString(), rel, title, method);
     }
 

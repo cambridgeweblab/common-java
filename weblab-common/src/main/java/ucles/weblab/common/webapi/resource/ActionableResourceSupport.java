@@ -2,7 +2,7 @@ package ucles.weblab.common.webapi.resource;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.module.jsonSchema.types.LinkDescriptionObject;
-import org.springframework.hateoas.ResourceSupport;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.net.URI;
 import ucles.weblab.common.webapi.TitledLink;
@@ -13,7 +13,7 @@ import ucles.weblab.common.webapi.TitledLink;
  * @since 03/11/15
  */
 @SuppressWarnings("PMD.UseSingleton")
-public class ActionableResourceSupport extends ResourceSupport {
+public class ActionableResourceSupport<T> extends RepresentationModel<ActionableResourceSupport<T>> {
 
     @JsonIgnoreProperties({"jsonSchema"}) // LinkDescriptionObject incorrectly annotates jsonSchema.
     public static class Action extends LinkDescriptionObject {

@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.expression.EvaluationContext;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
-import org.springframework.hateoas.core.DummyInvocationUtils;
+import org.springframework.hateoas.server.core.MethodInvocation;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.expression.ExpressionUtils;
 import org.springframework.security.access.expression.method.MethodSecurityExpressionHandler;
@@ -64,7 +64,7 @@ public class SecurityChecker {
         return checkResult;
     }
 
-    public boolean check(DummyInvocationUtils.MethodInvocation methodInvocation) {
+    public boolean check(MethodInvocation methodInvocation) {
         final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         PreAuthorize preAuth = methodInvocation.getMethod().getAnnotation(PreAuthorize.class);
@@ -87,7 +87,7 @@ public class SecurityChecker {
     }
 
     static <T> boolean contains(Collection<T> collection, Predicate<T> predicate) {
-        return collection.stream().filter(predicate).findFirst().isPresent();
+        return collection.stream().anyMatch(predicate);
     }
 
 

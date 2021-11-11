@@ -3,9 +3,9 @@ package ucles.weblab.common.webapi;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.converter.GenericConverter;
-import org.springframework.hateoas.Link;
-import org.springframework.hateoas.ResourceSupport;
-import org.springframework.hateoas.mvc.ControllerLinkBuilder;
+import org.springframework.hateoas.IanaLinkRelations;
+import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -26,24 +26,22 @@ public final class HateoasUtils {
      *
      * @param resource the resource to return headers for
      * @return headers containing Location if the resource had a 'self' link.
-     * @see ResourceSupport#getId()
      */
-    public static HttpHeaders locationHeader(ResourceSupport resource) {
+    public static <T extends RepresentationModel<T>> HttpHeaders locationHeader(RepresentationModel<T> resource) {
         HttpHeaders headers = new HttpHeaders();
-        final Link id = resource.getId();
-        if (id != null) {
-            headers.setLocation(URI.create(id.getHref()));
-        }
+        resource.getLink(IanaLinkRelations.SELF).ifPresent(id ->
+            headers.setLocation(URI.create(id.getHref()))
+        );
         return headers;
     }
 
     /**
      * Returns a link as a URI string, with or without any parameters included.
-     * @param linkBuilder the link, from {@link ControllerLinkBuilder#linkTo(Class)}.
+     * @param linkBuilder the link, from {@link WebMvcLinkBuilder#linkTo(Class)}.
      * @param withParameters true if parameters should be included in the URI string
      * @return the URI string
      */
-    public static String toUriString(ControllerLinkBuilder linkBuilder, boolean withParameters) {
+    public static String toUriString(WebMvcLinkBuilder linkBuilder, boolean withParameters) {
         // TODO: validate that toUriComponentsBuilder() is OK and doesn't need replacing with UriComponentsBuilder.fromUriString(...toString()) to avoid double-encoding.
         UriComponentsBuilder uriComponentsBuilder = linkBuilder.toUriComponentsBuilder();
         if (!withParameters) {
