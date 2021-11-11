@@ -34,7 +34,9 @@
     </pluginRepositories>
 
     <properties>
-        <weblab-common-java.version>2.0.0-SNAPSHOT</weblab-common-java.version>
+        <!-- weblab libraries dependency management is defined here despite an apparent circular dependency for release.
+           Things work because we don't try to load those artifacts. Dependency management is not validated by Maven -->
+        <weblab-libraries.version>${project.version}</weblab-libraries.version>
         <batik.version>1.7</batik.version>
 
         <!-- common libraries -->
@@ -75,77 +77,77 @@
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-spring-boot-starter</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-spring-boot-starter-actions</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-spring-boot-starter-test</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-spring-boot-starter-workflow</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-spring-boot-autoconfiguration</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-common</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-multipart-jersey</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-files</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-identity-auth0</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-audit</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-i18n</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-cross-context</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-json-schema</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-forms</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>ucles.weblab</groupId>
                 <artifactId>weblab-feedback</artifactId>
-                <version>${weblab-common-java.version}</version>
+                <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-fileupload</groupId>
