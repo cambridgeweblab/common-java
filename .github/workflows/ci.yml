@@ -44,10 +44,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        npx semantic-release --prepare @conveyal/maven-semantic-release \
-        --publish @semantic-release/github,@conveyal/maven-semantic-release \
-        --verify-conditions @semantic-release/github,@conveyal/maven-semantic-release \
-        --verify-release @conveyal/maven-semantic-release \
+        npx semantic-release \
         --use-conveyal-workflow \
         --dev-branch=dev --dry-run
 

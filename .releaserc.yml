@@ -20,8 +20,8 @@ verifyConditions:
   - "@semantic-release/github"
   - '@conveyal/maven-semantic-release'
 
-# prepare:
-#   - path: "@semantic-release/git"
+prepare:
+  - '@conveyal/maven-semantic-release'
 #   - path: "@semantic-release/changelog"
 #     changelogFile: "docs/CHANGELOG.md"
 
@@ -30,7 +30,7 @@ verifyRelease:
 
 
 publish:
-  - path: "@semantic-release/github"
+  - "@semantic-release/github"
   - '@conveyal/maven-semantic-release'
 
 # success:
