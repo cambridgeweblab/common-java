@@ -33,8 +33,8 @@ publish:
   - "@semantic-release/github"
   - '@conveyal/maven-semantic-release'
 
-# success:
-#   - "@semantic-release/github"
-#
+success:
+  - "@semantic-release/github" # Add a comment to issues and PRs that are resolved in this release
+
 # fail:
-#   - "@semantic-release/github"
+#   - "@semantic-release/github" # open an issue on Github if the release fails
