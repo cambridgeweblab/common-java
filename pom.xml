@@ -351,13 +351,6 @@
     </dependencyManagement>
 
     <build>
-        <extensions>
-            <extension>
-                <groupId>org.springframework.build</groupId>
-                <artifactId>aws-maven</artifactId>
-                <version>5.0.0.RELEASE</version>
-            </extension>
-        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -394,7 +387,7 @@
                     <dependency>
                         <groupId>com.github.cambridgeweblab</groupId>
                         <artifactId>java-lint-config-weblab</artifactId>
-                        <version>main-SNAPSHOT</version>
+                        <version>5648bcc8e1</version>
                     </dependency>
                 </dependencies>
             </plugin>
