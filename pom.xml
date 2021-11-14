@@ -33,6 +33,14 @@
         </pluginRepository>
     </pluginRepositories>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/cambridgeweblab/releases</url>
+        </repository>
+    </distributionManagement>
+
     <properties>
         <!-- weblab libraries dependency management is defined here despite an apparent circular dependency for release.
            Things work because we don't try to load those artifacts. Dependency management is not validated by Maven -->
