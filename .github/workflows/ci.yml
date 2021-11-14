@@ -23,6 +23,8 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: maven
+      env:
+        GITHUB_TOKEN: ${{ secrets.NU_DEPLOY_TOKEN }}
     - name: Cache Maven dependencies
       uses: actions/cache@v2.1.1
       with:
@@ -36,16 +38,14 @@ jobs:
       with:
         node-version: 14
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - run: |
-        npm install -g semantic-release @semantic-release/changelog @semantic-release/commit-analyzer \
-        semantic-release/git semantic-release/release-notes-generator @conveyal/maven-semantic-release
+        GITHUB_TOKEN: ${{ secrets.NU_DEPLOY_TOKEN }}
+    - name: Cache npm install
+      uses: bahmutov/npm-install@v1.6.0
     - name: Release
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.NU_DEPLOY_TOKEN }}
       run: |
-        npx semantic-release \
-        --use-conveyal-workflow \
-        --dev-branch=dev --dry-run
+        npx semantic-release
+#         --use-conveyal-workflow \
 
 
