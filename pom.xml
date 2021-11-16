@@ -5,8 +5,8 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ucles.weblab</groupId>
-    <artifactId>weblab-common-java</artifactId>
+    <groupId>com.github.cambridgeweblab</groupId>
+    <artifactId>common-java</artifactId>
     <packaging>pom</packaging>
     <version>2.3.0-SNAPSHOT</version>
 
@@ -44,7 +44,7 @@
     <properties>
         <!-- weblab libraries dependency management is defined here despite an apparent circular dependency for release.
            Things work because we don't try to load those artifacts. Dependency management is not validated by Maven -->
-        <weblab-libraries.version>${project.version}</weblab-libraries.version>
+        <weblab-libraries.version>2.3.0</weblab-libraries.version>
         <batik.version>1.7</batik.version>
 
         <!-- common libraries -->
@@ -83,77 +83,77 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab</groupId>
                 <artifactId>weblab-spring-boot-starter</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab</groupId>
                 <artifactId>weblab-spring-boot-starter-actions</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab</groupId>
                 <artifactId>weblab-spring-boot-starter-test</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab</groupId>
                 <artifactId>weblab-spring-boot-starter-workflow</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab</groupId>
                 <artifactId>weblab-spring-boot-autoconfiguration</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab.common-java</groupId>
                 <artifactId>weblab-common</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab</groupId>
                 <artifactId>weblab-multipart-jersey</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab</groupId>
                 <artifactId>weblab-files</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab</groupId>
                 <artifactId>weblab-identity-auth0</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab</groupId>
                 <artifactId>weblab-audit</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab</groupId>
                 <artifactId>weblab-i18n</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab</groupId>
                 <artifactId>weblab-cross-context</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab</groupId>
                 <artifactId>weblab-json-schema</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab</groupId>
                 <artifactId>weblab-forms</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>ucles.weblab</groupId>
+                <groupId>com.github.cambridgeweblab</groupId>
                 <artifactId>weblab-feedback</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
