@@ -15,6 +15,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId> <!-- for dependencies + plugin config such as git.properties -->
         <version>2.3.12.RELEASE</version>
+        <relativePath/>
     </parent>
 
     <repositories>
@@ -34,7 +35,7 @@
     <properties>
         <!-- weblab libraries dependency management is defined here despite an apparent circular dependency for release.
            Things work because we don't try to load those artifacts. Dependency management is not validated by Maven -->
-        <weblab-libraries.version>2.3.0</weblab-libraries.version>
+        <weblab-libraries.version>2.3.0-SNAPSHOT</weblab-libraries.version>
         <batik.version>1.7</batik.version>
 
         <!-- common libraries -->
@@ -73,27 +74,27 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.github.cambridgeweblab</groupId>
+                <groupId>com.github.cambridgeweblab.spring-boot-starters</groupId>
                 <artifactId>weblab-spring-boot-starter</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.cambridgeweblab</groupId>
+                <groupId>com.github.cambridgeweblab.spring-boot-starters</groupId>
                 <artifactId>weblab-spring-boot-starter-actions</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.cambridgeweblab</groupId>
+                <groupId>com.github.cambridgeweblab.spring-boot-starters</groupId>
                 <artifactId>weblab-spring-boot-starter-test</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.cambridgeweblab</groupId>
+                <groupId>com.github.cambridgeweblab.spring-boot-starters</groupId>
                 <artifactId>weblab-spring-boot-starter-workflow</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.cambridgeweblab</groupId>
+                <groupId>com.github.cambridgeweblab.spring-boot-starters</groupId>
                 <artifactId>weblab-spring-boot-autoconfiguration</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
@@ -104,46 +105,46 @@
             </dependency>
             <dependency>
                 <groupId>com.github.cambridgeweblab</groupId>
-                <artifactId>weblab-multipart-jersey</artifactId>
+                <artifactId>multipart-jersey</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.cambridgeweblab</groupId>
-                <artifactId>weblab-files</artifactId>
+                <artifactId>secure-files</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.cambridgeweblab</groupId>
+                <groupId>com.github.cambridgeweblab.identity</groupId>
                 <artifactId>weblab-identity-auth0</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.cambridgeweblab</groupId>
+                <groupId>com.github.cambridgeweblab.user-activity</groupId>
                 <artifactId>weblab-audit</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.cambridgeweblab</groupId>
-                <artifactId>weblab-i18n</artifactId>
+                <artifactId>i18n</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.cambridgeweblab</groupId>
+                <groupId>com.github.cambridgeweblab.api-schema</groupId>
                 <artifactId>weblab-cross-context</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.cambridgeweblab</groupId>
+                <groupId>com.github.cambridgeweblab.api-schema</groupId>
                 <artifactId>weblab-json-schema</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.cambridgeweblab</groupId>
+                <groupId>com.github.cambridgeweblab.api-schema</groupId>
                 <artifactId>weblab-forms</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.cambridgeweblab</groupId>
+                <groupId>com.github.cambridgeweblab.user-activity</groupId>
                 <artifactId>weblab-feedback</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
@@ -428,35 +429,4 @@
             </plugin>
         </plugins>
     </reporting>
-
-    <profiles>
-        <profile>
-            <id>shippable</id>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-surefire-plugin</artifactId>
-                            <version>2.20</version>
-                            <configuration>
-                                <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                                <reportsDirectory>../shippable/testresults</reportsDirectory>
-                                <tempDir>${project.build.directory}/surefire</tempDir>
-                            </configuration>
-                        </plugin>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-failsafe-plugin</artifactId>
-                            <configuration>
-                                <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                                <reportsDirectory>../shippable/testresults</reportsDirectory>
-                                <workingDirectory>${project.build.directory}/surefire</workingDirectory>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
-        </profile>
-    </profiles>
 </project>
