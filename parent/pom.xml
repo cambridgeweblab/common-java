@@ -84,8 +84,8 @@
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.cambridgeweblab.spring-boot-starters</groupId>
-                <artifactId>weblab-spring-boot-starter-test</artifactId>
+                <groupId>com.github.cambridgeweblab</groupId>
+                <artifactId>test-support</artifactId>
                 <version>${weblab-libraries.version}</version>
             </dependency>
             <dependency>
