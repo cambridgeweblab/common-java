@@ -51,7 +51,7 @@
         <spring-data-envers.version>1.0.2.RELEASE</spring-data-envers.version>
 
         <!-- others -->
-        <aws-sdk.version>1.11.133</aws-sdk.version>
+        <aws-sdk.version>1.12.261</aws-sdk.version>
         <kie.version>6.1.0.Final</kie.version>
         <activiti.version>5.19.0.1</activiti.version>
         <guava.version>18.0</guava.version>
